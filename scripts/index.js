@@ -1,0 +1,1 @@
+const emailListContainerEl = document.querySelector("#email-list-container");
