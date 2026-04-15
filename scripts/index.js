@@ -1,5 +1,6 @@
 const emailListContainerEl = document.querySelector("#email-list-container");
 const EMAIL_API_URL = "https://flynn.boolean.careers/exercises/api/random/mail";
+const createListBtn = document.querySelector("#create-list")
 function createEmailEntry(number, name, email){
     return `
     <tr>
@@ -10,7 +11,8 @@ function createEmailEntry(number, name, email){
     `
 }
 // Andiamo ora ad usare la fetchAPI, creando una funzione il cui compito è generarmi 10 email
-function generateEmailList(number){
+function createEmailList(number = 10){
+    emailListContainerEl.innerHTML = "";
     for(let i = 0; i<number; i++){
         fetch(EMAIL_API_URL)
         .then((response) => response.json())
@@ -26,7 +28,12 @@ function generateEmailList(number){
             }
         });
     }
-
 }
 
-generateEmailList(10);
+function createListBtnHandler(){
+    createEmailList(10);
+}
+
+createEmailList(10);
+
+createListBtn.addEventListener("click", createListBtnHandler);
