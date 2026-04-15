@@ -1,5 +1,12 @@
-header.row {
+header,footer{
+    background-color:#001533;
+}
+header {
     position:sticky;
     top:0;
-    background-color:#001533;
+}
+footer {
+    position:sticky;
+    bottom:0;
+    padding: 10px 0 10px 0
 }

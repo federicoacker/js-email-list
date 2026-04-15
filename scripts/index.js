@@ -1,6 +1,9 @@
 const emailListContainerEl = document.querySelector("#email-list-container");
+const createList15Btn = document.querySelector("#create-list-15");
+const createList20Btn = document.querySelector("#create-list-20");
+const createList100Btn = document.querySelector("#create-list-100");
 const EMAIL_API_URL = "https://flynn.boolean.careers/exercises/api/random/mail";
-const createListBtn = document.querySelector("#create-list")
+
 function createEmailEntry(number, name, email){
     return `
     <tr>
@@ -30,10 +33,18 @@ function createEmailList(number = 10){
     }
 }
 
-function createListBtnHandler(){
-    createEmailList(10);
+function createList15BtnHandler(){
+    createEmailList(15);
+}
+function createList20BtnHandler(){
+    createEmailList(20);
+}
+function createList100BtnHandler(){
+    createEmailList(100);
 }
 
-createEmailList(10);
+createEmailList(15);
 
-createListBtn.addEventListener("click", createListBtnHandler);
+createList15Btn.addEventListener("click", createList15BtnHandler);
+createList20Btn.addEventListener("click", createList20BtnHandler);
+createList100Btn.addEventListener("click", createList100BtnHandler);
