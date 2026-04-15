@@ -34,7 +34,7 @@ async function fetchEmail(){
             return emailHTML;
         }
     });
-    return await innerHTMLString;
+    return innerHTMLString;
 }
 
 async function generateEmailList(number){
