@@ -18,9 +18,9 @@ function fetchEmail(){
     .then((responseJson) => {
         const {success, response} = responseJson;
         if(success){
-            const name = response.split("@")[0]; //Selezioniamo la prima parte della email, che sarà per me, il mio nome
+            let name = response.split("@")[0]; //Selezioniamo la prima parte della email, che sarà per me, il mio nome
             const nameArray = name.split('');
-            nameArray[0] = nameArray[0].toUpperCase;
+            nameArray[0] = nameArray[0].toUpperCase();
             name = nameArray.join('');
             const emailHTML = createEmailEntry(0, name, response);
             emailListContainerEl.innerHTML += emailHTML;
