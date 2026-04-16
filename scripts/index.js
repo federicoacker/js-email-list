@@ -9,7 +9,7 @@ const dom = {
     createList100Btn : document.querySelector("#create-list-100"),
 }
 
-let emailsHTMLArray = []; // Inizializiamo un Array vuoto
+let emailsHTMLArray = [];                                                            // Inizializiamo un Array vuoto
 
 // Funzione che crea la stringa html per una singola entry
 function createEmailEntry(number, name, email){
@@ -24,7 +24,7 @@ function createEmailEntry(number, name, email){
 // Funzione che crea la email list, accetta il numero di entry che vogliamo creare, di default 10
 function createEmailList(number = 10){
 
-    emailsHTMLArray.length = 0; // Prima cosa, settiamo la lunghezza dell'array a 0 (per quando schiacciamo i bottoni)
+    emailsHTMLArray.length = 0;                                                     // Prima cosa, settiamo la lunghezza dell'array a 0 (per quando schiacciamo i bottoni)
 
     for(let i = 0; i<number; i++){                                                  // Poi iteriamo per il numero di email che vogliamo avere
         fetch(EMAIL_API_URL)                                                        // Facciamo il fetch ed otteniamo la promessa dall'API
