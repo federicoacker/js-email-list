@@ -56,8 +56,10 @@ function createEmailList(number = 10){
                 const nameArray = name.split('');                                   // La splitto in un array
                 nameArray[0] = nameArray[0].toUpperCase();                          // Rendo uppercase la prima lettera
                 name = nameArray.join('');                                          // Rejoino l'array in un'unica variabile che sarà il name
+                                                                                    
                 const emailHTML = createEmailEntry(i, name, response);              // creo la stringa html, dandogli i dati che ho recuperato dalla fetch
                 emailsHTMLArray.push(emailHTML);                                    // La pusho nell'array
+                                                                                    
                 if(emailsHTMLArray.length === number && dom.emailListContainerEl){  // Una volta che l'array avrà length === al numero di email che avevamo richiesto
                     dom.emailListContainerEl.innerHTML = emailsHTMLArray.join("");  // Allora aggiorno l'innerHTML con tutte le stringhe dell'array
                                                                                     // Joinate con join("");
