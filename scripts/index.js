@@ -1,4 +1,4 @@
-// @ts-check
+// @ts-check    
 'use strict';
 //URL DELL'API
 const EMAIL_API_URL = "https://flynn.boolean.careers/exercises/api/random/mail";
