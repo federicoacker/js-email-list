@@ -12,7 +12,7 @@ const dom = {
 }
 
 /** 
- * @type {Array<string>};
+ * @type {string[]};
  */
 const emailsHTMLArray = [];                                                            // Inizializiamo un Array vuoto
 
