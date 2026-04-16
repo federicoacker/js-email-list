@@ -4,6 +4,10 @@
 const EMAIL_API_URL = "https://flynn.boolean.careers/exercises/api/random/mail";
 //VARIABILI
 
+/**
+ * @type {{emailListContainerEl:?HTMLElement, createList15Btn:?HTMLElement, createList20Btn:?HTMLElement, createList100Btn:?HTMLElement}}
+ */
+
 const dom = {
     emailListContainerEl : document.querySelector("#email-list-container"),
     createList15Btn : document.querySelector("#create-list-15"),
