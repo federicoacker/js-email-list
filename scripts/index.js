@@ -1,3 +1,5 @@
+// @ts-check
+'use strict';
 //URL DELL'API
 const EMAIL_API_URL = "https://flynn.boolean.careers/exercises/api/random/mail";
 //VARIABILI
@@ -9,8 +11,17 @@ const dom = {
     createList100Btn : document.querySelector("#create-list-100"),
 }
 
+/** 
+ * @type {Array<string>};
+ */
 let emailsHTMLArray = [];                                                            // Inizializiamo un Array vuoto
 
+/**
+ * @param {number} number
+ * @param {string} name
+ * @param {string} email
+ * @returns {string}
+ */
 // Funzione che crea la stringa html per una singola entry
 function createEmailEntry(number, name, email){
     return `
@@ -39,7 +50,7 @@ function createEmailList(number = 10){
                 name = nameArray.join('');                                          //Rejoino l'array in un'unica variabile che sarà il name
                 const emailHTML = createEmailEntry(i, name, response);              //creo la stringa html, dandogli i dati che ho recuperato dalla fetch
                 emailsHTMLArray.push(emailHTML);                                    //La pusho nell'array
-                if(emailsHTMLArray.length === number){                              //Una volta che l'array avrà length === al numero di email che avevamo richiesto
+                if(emailsHTMLArray.length === number && dom.emailListContainerEl){                              //Una volta che l'array avrà length === al numero di email che avevamo richiesto
                     dom.emailListContainerEl.innerHTML = emailsHTMLArray.join("");  // Allora aggiorno l'innerHTML con tutte le stringhe dell'array
                                                                                     // Joinate con join("");
                 }
@@ -65,6 +76,8 @@ function createList100BtnHandler(){
 createEmailList(15);
 
 //Aggiungiamo gli eventListener per il click
-dom.createList15Btn.addEventListener("click", createList15BtnHandler);
-dom.createList20Btn.addEventListener("click", createList20BtnHandler);
-dom.createList100Btn.addEventListener("click", createList100BtnHandler);
+if(dom.createList100Btn && dom.createList15Btn && dom.createList20Btn){
+    dom.createList15Btn.addEventListener("click", createList15BtnHandler);
+    dom.createList20Btn.addEventListener("click", createList20BtnHandler);
+    dom.createList100Btn.addEventListener("click", createList100BtnHandler);
+}
