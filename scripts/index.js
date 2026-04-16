@@ -32,6 +32,10 @@ function createEmailEntry(number, name, email){
     </tr>
     `
 }
+
+/**
+ * @param {number} number
+ */
 // Funzione che crea la email list, accetta il numero di entry che vogliamo creare, di default 10
 function createEmailList(number = 10){
 
