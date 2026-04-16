@@ -14,7 +14,7 @@ const dom = {
 /** 
  * @type {Array<string>};
  */
-let emailsHTMLArray = [];                                                            // Inizializiamo un Array vuoto
+const emailsHTMLArray = [];                                                            // Inizializiamo un Array vuoto
 
 /**
  * @param {number} number
