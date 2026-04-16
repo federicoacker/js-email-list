@@ -33,7 +33,8 @@ async function fetchEmail(){
             counter++;
             return emailHTML;
         }
-    });
+    })
+    .catch(error => {console.error(error);});                                   // Aggiunta la catch in caso di errore.;
     return innerHTMLString;
 }
 

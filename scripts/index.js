@@ -63,7 +63,8 @@ function createEmailList(number = 10){
                                                                                     // Joinate con join("");
                 }
             }
-        });
+        })
+        .catch(error => {console.error(error);});                                   // Aggiunta la catch in caso di errore.
     }
 }
 
