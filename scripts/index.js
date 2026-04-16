@@ -52,13 +52,13 @@ function createEmailList(number = 10){
         .then((responseJson) => {                                                   // Poi vado di nuovo di then, prendendomi la promessa del json, una volta che avrò il json:
             const {success, response} = responseJson;                               // Lo destrutturo in variabile success e response
             if(success){                                                            // Se success era true
-                let name = response.split("@")[0];                                  //Selezioniamo la prima parte della email, che sarà per me, il mio nome
-                const nameArray = name.split('');                                   //La splitto in un array
-                nameArray[0] = nameArray[0].toUpperCase();                          //Rendo uppercase la prima lettera
-                name = nameArray.join('');                                          //Rejoino l'array in un'unica variabile che sarà il name
-                const emailHTML = createEmailEntry(i, name, response);              //creo la stringa html, dandogli i dati che ho recuperato dalla fetch
-                emailsHTMLArray.push(emailHTML);                                    //La pusho nell'array
-                if(emailsHTMLArray.length === number && dom.emailListContainerEl){                              //Una volta che l'array avrà length === al numero di email che avevamo richiesto
+                let name = response.split("@")[0];                                  // Selezioniamo la prima parte della email, che sarà per me, il mio nome
+                const nameArray = name.split('');                                   // La splitto in un array
+                nameArray[0] = nameArray[0].toUpperCase();                          // Rendo uppercase la prima lettera
+                name = nameArray.join('');                                          // Rejoino l'array in un'unica variabile che sarà il name
+                const emailHTML = createEmailEntry(i, name, response);              // creo la stringa html, dandogli i dati che ho recuperato dalla fetch
+                emailsHTMLArray.push(emailHTML);                                    // La pusho nell'array
+                if(emailsHTMLArray.length === number && dom.emailListContainerEl){  // Una volta che l'array avrà length === al numero di email che avevamo richiesto
                     dom.emailListContainerEl.innerHTML = emailsHTMLArray.join("");  // Allora aggiorno l'innerHTML con tutte le stringhe dell'array
                                                                                     // Joinate con join("");
                 }
